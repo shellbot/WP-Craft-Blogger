@@ -54,7 +54,7 @@ class WPCB_Admin {
       'singular_name'      => _x( 'Pattern', 'post type singular name', 'wp-craft-blogger' ),
       'menu_name'          => _x( 'Patterns', 'admin menu', 'wp-craft-blogger' ),
       'name_admin_bar'     => _x( 'Pattern', 'add new on admin bar', 'wp-craft-blogger' ),
-      'add_new'            => _x( 'Add New', 'book', 'wp-craft-blogger' ),
+      'add_new'            => _x( 'Add New', 'pattern', 'wp-craft-blogger' ),
       'add_new_item'       => __( 'Add New Pattern', 'wp-craft-blogger' ),
       'new_item'           => __( 'New Pattern', 'wp-craft-blogger' ),
       'edit_item'          => __( 'Edit Pattern', 'wp-craft-blogger' ),

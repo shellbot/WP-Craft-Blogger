@@ -3,9 +3,6 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
- *
  * @package    WP_Craft_Blogger
  * @subpackage WP_Craft_Blogger/public
  * @author     Shellbot <hi@codebyshellbot.com>
