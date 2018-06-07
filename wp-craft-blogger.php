@@ -4,7 +4,7 @@
  * Plugin Name:       WP Craft Blogger
  * Plugin URI:        http://codebyshellbot.com/wordpress-plugins/wp-craft-blogger
  * Description:       Add crafting patterns to your blog with an easy-to-use interface and customizable template.
- * Version:           0.0.1
+ * Version:           0.0.2
  * Author:            Shellbot
  * Author URI:        http://codebyshellbot.com/
  * License:           GPL-2.0+

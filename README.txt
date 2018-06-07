@@ -3,7 +3,7 @@ Contributors: Shellbot
 Donate link: http://codebyshellbot.com/
 Tags: craft, knitting, crochet, diy, tutorial, pattern, crafts, crafting, crafter, craft blog, knitting blog, crochet blog, fiber arts
 Requires at least: 3.0.1
-Tested up to: 4.2.2
+Tested up to: 4.9.6
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -54,6 +54,9 @@ I'll see what I can do.
 3. The global settings page.
 
 == Changelog ==
+
+= 0.0.2 =
+* Compatibility update for latest WP version.
 
 = 0.0.1 =
 * So beta. Many bugs. Wow.

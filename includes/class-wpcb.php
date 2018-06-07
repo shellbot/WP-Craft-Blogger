@@ -92,6 +92,14 @@ class WP_Craft_Blogger {
 	 * @access   private
 	 */
 	private function load_dependencies() {
+		
+		/**
+		 * OptionTree framework for plugin settings page.
+		 * Only load if not already loaded from elsewhere.
+		 */
+		if ( ! class_exists( 'OT_Loader' ) ) {
+    		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/option-tree/ot-loader.php';
+		}
 
 		/**
 		 * The class responsible for orchestrating the actions and filters of the
@@ -148,15 +156,14 @@ class WP_Craft_Blogger {
 	private function define_admin_hooks() {
 
 		$plugin_admin = new WPCB_Admin( $this->get_plugin_name(), $this->get_version() );
-
-    $this->loader->add_action( 'init', $plugin_admin, 'add_pattern_cpt' );
-    $this->loader->add_action( 'init', $plugin_admin, 'register_pattern_settings_page' );
-    $this->loader->add_action( 'admin_init', $plugin_admin, 'add_pattern_meta_box' );
-		$this->loader->add_action( 'after_setup_theme', $plugin_admin, 'include_optiontree' );
-
-    $this->loader->add_filter( 'ot_header_logo_link', $plugin_admin, 'filter_header_logo_link' );
-    $this->loader->add_filter( 'ot_header_version_text', $plugin_admin, 'filter_header_version_text' );
-    $this->loader->add_filter( 'ot_list_item_title_label', $plugin_admin, 'filter_list_item_title_label', 10, 2 );
+	
+	    $this->loader->add_action( 'init', $plugin_admin, 'add_pattern_cpt' );
+	    $this->loader->add_action( 'init', $plugin_admin, 'register_pattern_settings_page' );
+	    $this->loader->add_action( 'admin_init', $plugin_admin, 'add_pattern_meta_box' );
+	
+	    $this->loader->add_filter( 'ot_header_logo_link', $plugin_admin, 'filter_header_logo_link' );
+	    $this->loader->add_filter( 'ot_header_version_text', $plugin_admin, 'filter_header_version_text' );
+	    $this->loader->add_filter( 'ot_list_item_title_label', $plugin_admin, 'filter_list_item_title_label', 10, 2 );
 
 	}
 
@@ -171,12 +178,12 @@ class WP_Craft_Blogger {
 
 		$plugin_public = new WPCB_Public( $this->get_plugin_name(), $this->get_version() );
 
-	  $this->loader->add_action( 'init', $plugin_public, 'add_shortcodes' );
+		$this->loader->add_action( 'init', $plugin_public, 'add_shortcodes' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-	  $this->loader->add_action( 'wp_head', $plugin_public, 'output_header_css' );
-	  $this->loader->add_action( 'pre_get_posts', $plugin_public, 'add_patterns_to_loop' );
+		$this->loader->add_action( 'wp_head', $plugin_public, 'output_header_css' );
+		$this->loader->add_action( 'pre_get_posts', $plugin_public, 'add_patterns_to_loop' );
 
-	  $this->loader->add_filter( 'the_content', $plugin_public, 'pattern_content_filter' );
+		$this->loader->add_filter( 'the_content', $plugin_public, 'pattern_content_filter' );
 
 	}
 
